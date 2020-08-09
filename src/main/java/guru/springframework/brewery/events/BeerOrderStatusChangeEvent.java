@@ -24,6 +24,9 @@ import org.springframework.context.ApplicationEvent;
 public class BeerOrderStatusChangeEvent extends ApplicationEvent {
 
     private final OrderStatusEnum previousStatus;
+    public BeerOrder getBeerOrder(){
+        return (BeerOrder) this.source;
+    }
 
     public BeerOrderStatusChangeEvent(BeerOrder source, OrderStatusEnum previousStatus) {
         super(source);
